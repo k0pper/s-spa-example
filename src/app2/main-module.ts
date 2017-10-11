@@ -1,9 +1,8 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {App2} from './app2.component.ts';
-import {Subroute1} from './subroute1.component.ts';
-import {Subroute2} from './subroute2.component.ts';
-import {enableProdMode} from '@angular/core';
+import {Ng2AppComponent} from './app2.component';
+import {Subroute1} from './subroute1.component';
+import {Subroute2} from './subroute2.component';
 import {RouterModule, Routes} from "@angular/router";
 import {APP_BASE_HREF} from "@angular/common";
 
@@ -18,8 +17,6 @@ const appRoutes: Routes = [
 	},
 ];
 
-enableProdMode();
-
 @NgModule({
 	imports: [
 		BrowserModule,
@@ -27,13 +24,13 @@ enableProdMode();
 			useHash: true
 		}),
 	],
-	providers: [{provide: APP_BASE_HREF, useValue: '/app2/'}],
+	providers: [{provide: APP_BASE_HREF, useValue: '/ng2AppRoute/'}],
 	declarations: [
-		App2,
+		Ng2AppComponent,
 		Subroute1,
 		Subroute2,
 	],
-	bootstrap: [App2]
+	bootstrap: [Ng2AppComponent]
 })
 export default class MainModule {
 }
